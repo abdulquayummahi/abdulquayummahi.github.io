@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdul Quayum Mahi | Software Developer</title>
+<meta name="description" content="Portfolio of Abdul Quayum Mahi, a software developer in Dhaka building mobile and web apps with React Native, NestJS and .NET, with a minor in AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1120;--bg2:#0f172a;--card:#131c31;--line:#1f2a44;--text:#e2e8f0;--muted:#94a3b8;--head:#f8fafc;--accent:#60a5fa;--accent2:#818cf8;--accent-ink:#0b1120;--chip:#1a2540;--ok:#34d399;--shadow:0 10px 30px rgba(0,0,0,.35)}
+html[data-theme=light]{--bg:#ffffff;--bg2:#f8fafc;--card:#ffffff;--line:#e2e8f0;--text:#334155;--muted:#64748b;--head:#0f172a;--accent:#2563eb;--accent2:#4f46e5;--accent-ink:#ffffff;--chip:#eff4ff;--ok:#059669;--shadow:0 10px 30px rgba(15,23,42,.08)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{color:var(--head);margin:0;line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:700}
+h3{font-size:1.15rem;font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+section{padding:88px 0}
+.sec-head{margin-bottom:40px;max-width:640px}
+.sec-head p{color:var(--muted);margin-top:10px;font-size:1.05rem}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-weight:800;color:var(--head);font-size:1.05rem;letter-spacing:-.02em}
+.logo span{color:var(--accent)}
+.logo:hover{text-decoration:none}
+.links{display:flex;gap:4px;align-items:center}
+.links a{color:var(--muted);font-size:.92rem;font-weight:500;padding:8px 12px;border-radius:8px}
+.links a:hover{color:var(--head);text-decoration:none;background:var(--chip)}
+.links a.on{color:var(--head)}
+.icon-btn{background:none;border:1px solid var(--line);color:var(--text);width:38px;height:38px;border-radius:10px;cursor:pointer;display:grid;place-items:center}
+.icon-btn:hover{border-color:var(--accent)}
+.icon-btn svg{width:18px;height:18px}
+.nav-right{display:flex;gap:8px;align-items:center}
+#menuBtn{display:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:10px;font-weight:600;font-size:.95rem;border:1px solid var(--line);color:var(--head);background:var(--card);cursor:pointer;font-family:inherit}
+.btn:hover{text-decoration:none;border-color:var(--accent)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn svg{width:18px;height:18px}
+
+/* hero */
+.hero{padding:96px 0 72px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-200px -100px auto auto;width:640px;height:640px;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent2) 22%,transparent),transparent);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:center;position:relative}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:500;color:var(--text);background:var(--chip);border:1px solid var(--line);padding:6px 14px;border-radius:99px;margin-bottom:22px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 25%,transparent)}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.035em}
+.grad{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:clamp(1.15rem,2.2vw,1.45rem);color:var(--head);font-weight:500;margin:16px 0 18px}
+.hero p.lead{color:var(--muted);font-size:1.08rem;max-width:56ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.photo{justify-self:center;position:relative}
+.photo img{width:min(230px,60vw);height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:24px;border:1px solid var(--line);box-shadow:var(--shadow);display:block}
+.photo::after{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:24px;border:1px solid var(--line);z-index:-1;background:var(--bg2)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px;position:relative}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.stat strong{display:block;font-size:1.9rem;font-weight:800;color:var(--head);letter-spacing:-.03em;line-height:1.1}
+.stat span{color:var(--muted);font-size:.93rem}
+
+/* about */
+.alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px}
+.about-grid p + p{margin-top:16px}
+.facts{display:grid;gap:12px;align-content:start}
+.fact{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.fact svg{width:22px;height:22px;color:var(--accent);flex:none;margin-top:2px}
+.fact b{color:var(--head);display:block;font-weight:600}
+.fact span{color:var(--muted);font-size:.93rem}
+
+/* skills */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.card h3 svg{width:20px;height:20px;color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--chip);border:1px solid var(--line);color:var(--text);font-size:.86rem;font-weight:500;padding:5px 12px;border-radius:8px}
+
+/* projects */
+.projects{display:grid;gap:22px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:36px;transition:border-color .2s,transform .2s}
+.proj:hover{border-color:color-mix(in srgb,var(--accent) 60%,var(--line))}
+.proj .kind{font:500 .8rem "JetBrains Mono",ui-monospace,monospace;color:var(--accent);margin-bottom:10px}
+.proj h3{font-size:1.45rem;font-weight:700;letter-spacing:-.02em}
+.proj .sum{color:var(--muted);margin:12px 0 18px}
+.proj ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.proj li{position:relative;padding-left:26px}
+.proj li::before{content:"";position:absolute;left:2px;top:.55em;width:12px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.proj .mine{font-weight:600;color:var(--head);font-size:.92rem;margin-bottom:12px}
+.proj .foot{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+.earlier{margin-top:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.earlier .card p{color:var(--muted);font-size:.95rem}
+.earlier .card h3{margin-bottom:8px}
+
+/* education */
+.timeline{display:grid;gap:0;border-left:2px solid var(--line);margin-left:8px}
+.tl{position:relative;padding:0 0 36px 32px}
+.tl:last-child{padding-bottom:0}
+.tl::before{content:"";position:absolute;left:-9px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg2);border:3px solid var(--accent)}
+.tl time{font:500 .82rem "JetBrains Mono",ui-monospace,monospace;color:var(--accent)}
+.tl h3{margin:6px 0 2px;font-size:1.2rem}
+.tl .org{color:var(--muted);margin-bottom:12px}
+.tl dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 18px}
+.tl dt{color:var(--head);font-weight:600;font-size:.93rem}
+.tl dd{margin:0;font-size:.95rem}
+.two{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px}
+.ach{display:grid;gap:12px;align-content:start}
+
+.lead,.about-grid p,.proj .sum,.proj li,.earlier .card p,.tl dd,.fact span{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+/* contact */
+.contact{text-align:center}
+.contact .sec-head{margin:0 auto 32px}
+[hidden]{display:none!important}
+.mail{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px 12px 22px;font-weight:600;color:var(--head);font-size:1.05rem}
+.socials{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem;text-align:center}
+
+@media (max-width:900px){
+  section{padding:64px 0}
+  .hero{padding:56px 0 48px}
+  .hero-grid,.about-grid,.two,.proj{grid-template-columns:1fr;gap:28px}
+  .photo{order:-1;justify-self:start}
+  .photo img{width:130px;height:auto;border-radius:18px}
+  .photo::after{display:none}
+  .grid3{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr;margin-top:40px}
+  .earlier{grid-template-columns:1fr}
+  #menuBtn{display:grid}
+  .links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:10px 24px 16px}
+  .links.open{display:flex}
+  .links a{padding:12px}
+}
+@media (max-width:560px){.grid3{grid-template-columns:1fr}.tl dl{grid-template-columns:1fr;gap:2px 0}.tl dd{margin-bottom:8px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="container nav-in">
+  <a class="logo" href="#top" data-go="top">Abdul Quayum Mahi<span>.</span></a>
+  <nav class="links" id="links" aria-label="Sections">
+    <a href="#about" data-go="about">About</a><a href="#skills" data-go="skills">Skills</a><a href="#projects" data-go="projects">Projects</a><a href="#education" data-go="education">Education</a><a href="#contact" data-go="contact">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="icon-btn" id="themeBtn" aria-label="Switch between dark and light theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+    <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="container">
+  <div class="hero-grid">
+    <div>
+      <div class="badge"><i></i>Open to internships from January 2027</div>
+      <h1>Hi, I'm <span class="grad">Abdul Quayum Mahi</span></h1>
+      <p class="role">Software developer building mobile and web apps, with a minor in AI.</p>
+      <p class="lead">Final-semester Computer Science and Engineering student at AIUB in Dhaka. I build with React Native, NestJS and .NET, and I'm now working on NLP and LLM projects.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects" data-go="projects">View my projects</a>
+        <a class="btn" href="https://github.com/abdulquayummahi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.2.8-.6v-2c-3.2.7-3.900-1.400-3.900-1.400-.5-1.300-1.300-1.700-1.300-1.700-1-.7.1-.7.1-.7 1.200.1 1.800 1.200 1.800 1.200 1 1.800 2.800 1.300 3.400 1 .1-.8.4-1.300.8-1.600-2.600-.3-5.300-1.300-5.300-5.700 0-1.300.5-2.300 1.200-3.100-.1-.3-.5-1.500.1-3.100 0 0 1-.3 3.200 1.200a11 11 0 0 1 5.800 0c2.200-1.500 3.200-1.200 3.200-1.200.6 1.600.2 2.800.1 3.100.8.800 1.200 1.900 1.200 3.100 0 4.400-2.700 5.400-5.300 5.700.4.400.8 1.100.8 2.200v3.200c0 .3.200.7.800.6A11.500 11.500 0 0 0 12 .5z"/></svg>GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/abdulquayummahi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.980 3.500a2.500 2.500 0 1 1 0 5 2.500 2.500 0 0 1 0-5zM3 9.750h4V21H3V9.750zm6.500 0h3.800v1.540h.050c.530-1 1.830-2.050 3.760-2.050 4 0 4.750 2.640 4.750 6.070V21h-4v-5.050c0-1.200 0-2.750-1.680-2.750s-1.940 1.310-1.940 2.660V21h-4V9.750z"/></svg>LinkedIn</a>
+      </div>
+    </div>
+    <div class="photo"><img src="data:image/jpeg;base64,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" alt="Portrait of Abdul Quayum Mahi" width="175" height="220"></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>3</strong><span>team projects shipped across mobile, web and desktop</span></div>
+    <div class="stat"><strong>20+</strong><span>screens built for the Ayojon campus events app</span></div>
+    <div class="stat"><strong>5-star</strong><span>in C++ and Java on HackerRank</span></div>
+  </div>
+</div></section>
+
+<section id="about" class="alt"><div class="container">
+  <div class="sec-head"><h2>About me</h2></div>
+  <div class="about-grid">
+    <div>
+      <p>I'm a software developer who likes owning a feature from the database to the screen. In team projects I've set up backends, designed schemas, written REST APIs with authentication and role-based access, and built the mobile and web interfaces that use them.</p>
+      <p>My degree combines a major in Software Development with a minor in Artificial Intelligence, so I'm comfortable in TypeScript and C# and I'm building on that with Python, NLP and LLM-based applications.</p>
+      <p>I'm looking for a software or AI engineering internship where I can work on a real product, learn from experienced engineers and grow into a full-time role.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.800-7 11-7 11z"/><circle cx="12" cy="10" r="2.500"/></svg><div><b>Dhaka, Bangladesh</b><span>On-site in Dhaka or remote</span></div></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11.500V16c0 1 2.700 3 6 3s6-2 6-3v-4.500"/></svg><div><b>B.Sc. in CSE, AIUB</b><span>Final semester, graduating 2027</span></div></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div><b>Available January 2027</b><span>Software or AI engineering internship</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="container">
+  <div class="sec-head"><h2>Skills</h2><p>The tools I've used in real projects, grouped by where they sit in the stack.</p></div>
+  <div class="grid3">
+    <div class="card"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>Languages</h3><div class="chips"><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">C#</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Java</span><span class="chip">C++</span></div></div>
+    <div class="card"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Frontend and mobile</h3><div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Expo Router</span><span class="chip">React</span><span class="chip">Next.js</span></div></div>
+    <div class="card"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.500h.01M7 16.500h.01"/></svg>Backend and desktop</h3><div class="chips"><span class="chip">Node.js</span><span class="chip">NestJS</span><span class="chip">ASP.NET</span><span class="chip">.NET Framework</span><span class="chip">Windows Forms</span><span class="chip">REST APIs</span></div></div>
+    <div class="card"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.700 3.600 3 8 3s8-1.300 8-3V6M4 12v6c0 1.700 3.600 3 8 3s8-1.300 8-3v-6"/></svg>Databases</h3><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">SQL Server</span><span class="chip">Schema design</span></div></div>
+    <div class="card"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.900 5.100L19 10l-5.100 1.900L12 17l-1.900-5.100L5 10l5.100-1.900L12 3z"/><path d="M19 15l.8 2.200L22 18l-2.200.8L19 21l-.8-2.200L16 18l2.200-.8L19 15z"/></svg>AI and NLP</h3><div class="chips"><span class="chip">Natural Language Processing</span><span class="chip">Python</span><span class="chip">LLM-assisted development</span></div></div>
+    <div class="card"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.500"/><circle cx="6" cy="18" r="2.500"/><circle cx="18" cy="12" r="2.500"/><path d="M6 8.500v7M8.300 7l7.400 3.800M8.300 17l7.400-3.800"/></svg>Practices and tools</h3><div class="chips"><span class="chip">Git and GitHub</span><span class="chip">Pull request reviews</span><span class="chip">JWT auth</span><span class="chip">Role-based access</span><span class="chip">OOP</span><span class="chip">3-tier architecture</span></div></div>
+  </div>
+</div></section>
+
+<section id="projects" class="alt"><div class="container">
+  <div class="sec-head"><h2>Projects</h2><p>Three team projects where I owned core parts of the system.</p></div>
+  <div class="projects">
+    <article class="proj">
+      <div><div class="kind">Mobile app &middot; Team of 3</div><h3>Ayojon</h3><p class="sum">A campus events app with more than 20 screens. Students find, save and book events and receive digital tickets; organizers publish events and check attendees in at the door.</p><div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">TypeScript</span></div></div>
+      <div><p class="mine">What I built</p><ul><li>Authentication and profiles, with tab layouts guarded by user role.</li><li>Ticket check-in logic that handles valid, used, cancelled, wrong-event and unknown tickets.</li><li>Shared app state with useReducer and useContext.</li></ul><div class="foot"><a class="btn" href="https://github.com/abdulquayummahi/ayojon-frontend" target="_blank" rel="noopener">View code on GitHub</a></div></div>
+    </article>
+    <article class="proj">
+      <div><div class="kind">Web platform &middot; Team of 4</div><h3>TutorBD</h3><p class="sum">A tutor marketplace with Student, Tutor, Moderator and Admin roles, covering tutor approval, tuition posts, bookings and reviews.</p><div class="chips"><span class="chip">NestJS</span><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span><span class="chip">JWT</span></div></div>
+      <div><p class="mine">What I built</p><ul><li>Set up the NestJS backend for the team.</li><li>Eight REST routes for tutor profiles and schedules, with DTO validation and file upload.</li><li>Reviewed and merged the team's pull requests.</li></ul><div class="foot"><a class="btn" href="https://github.com/A-Ahad395/TutorBD_Backend" target="_blank" rel="noopener">View code on GitHub</a></div></div>
+    </article>
+    <article class="proj">
+      <div><div class="kind">Desktop system &middot; Team of 3</div><h3>Computer Shop Management System</h3><p class="sum">A desktop sales system with Admin and Employee roles: live product search, cart, VAT and discounts, invoices and automatic stock updates.</p><div class="chips"><span class="chip">C#</span><span class="chip">.NET Framework</span><span class="chip">Windows Forms</span><span class="chip">SQL Server</span></div></div>
+      <div><p class="mine">What I built</p><ul><li>A five-table SQL Server database design.</li><li>One reusable data-access class that handles every create, read, update and delete.</li></ul><div class="foot"><a class="btn" href="https://github.com/abdulquayummahi/ComputerShopManagementSystem" target="_blank" rel="noopener">View code on GitHub</a></div></div>
+    </article>
+  </div>
+  <div class="earlier">
+    <div class="card"><h3>Mobile Shop Management System</h3><p>My first team project, which I led: a Java Swing application for product and inventory management that stores its data in text files.</p></div>
+    <div class="card"><h3>HomeRentBD</h3><p>A software business plan and presentation for a service that makes finding rental homes across Bangladesh simpler.</p></div>
+  </div>
+</div></section>
+
+<section id="education"><div class="container">
+  <div class="two">
+    <div>
+      <div class="sec-head"><h2>Education</h2></div>
+      <div class="timeline">
+        <div class="tl"><time>2022 to 2027</time><h3>B.Sc. in Computer Science and Engineering</h3><p class="org">American International University-Bangladesh (AIUB)</p>
+          <dl><dt>Major</dt><dd>Software Development: Advanced Programming with .NET (ASP.NET), Advanced Programming in Web Technology (React), Mobile Application Development (React Native)</dd><dt>Minor</dt><dd>Artificial Intelligence: Natural Language Processing</dd></dl></div>
+        <div class="tl"><time>2019 to 2021</time><h3>Higher Secondary Certificate, Science</h3><p class="org">Milestone College, Dhaka</p><dl><dt>Role</dt><dd>Class Captain</dd></dl></div>
+      </div>
+    </div>
+    <div>
+      <div class="sec-head"><h2>Achievements</h2></div>
+      <div class="ach">
+        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.700 5.600 6.100.9-4.400 4.300 1 6.100L12 17l-5.400 2.900 1-6.100L3.200 9.500l6.100-.9L12 3z"/></svg><div><b>HackerRank</b><span>5-star in C++ and Java, with badges in SQL, Python and Problem Solving. <a href="https://www.hackerrank.com/profile/abdulquayummahi" target="_blank" rel="noopener">See profile</a></span></div></div>
+        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3V9z"/></svg><div><b>YouTube tutorials</b><span>Video walkthroughs of algorithmic problems. <a href="https://www.youtube.com/@gtkaq" target="_blank" rel="noopener">Watch the channel</a></span></div></div>
+        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 2.700-5 6-5s6 2 6 5M16 5.500a3 3 0 0 1 0 5M18 15.500c2 .7 3 2.300 3 4.500"/></svg><div><b>Team leadership</b><span>Led my first team project and reviewed pull requests on TutorBD.</span></div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact" class="alt contact"><div class="container">
+  <div class="sec-head"><h2>Let's talk</h2><p>I'm looking for a software or AI engineering internship starting January 2027. Email is the fastest way to reach me; click the button to see my address.</p></div>
+  <div class="mail" id="mailBox"><span id="mailHidden">Email address hidden</span><a id="mail" hidden></a><button class="btn primary" id="revealBtn">Show email address</button><button class="btn primary" id="copyBtn" hidden>Copy email</button></div>
+  <div class="socials">
+    <a class="btn" href="https://github.com/abdulquayummahi" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/abdulquayummahi" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://www.hackerrank.com/profile/abdulquayummahi" target="_blank" rel="noopener">HackerRank</a>
+    <a class="btn" href="https://www.youtube.com/@gtkaq" target="_blank" rel="noopener">YouTube</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="container">&copy; 2026 Abdul Quayum Mahi. Dhaka, Bangladesh.</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, links=document.getElementById('links'), menu=document.getElementById('menuBtn');
+  try{var t=localStorage.getItem('aqm-theme'); if(t==='light'||t==='dark') root.setAttribute('data-theme',t);}catch(e){}
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark'; root.setAttribute('data-theme',n);
+    try{localStorage.setItem('aqm-theme',n);}catch(e){}
+  });
+  menu.addEventListener('click',function(){var o=links.classList.toggle('open'); menu.setAttribute('aria-expanded',o);});
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-go]'); if(!a) return;
+    var el=document.getElementById(a.getAttribute('data-go')); if(!el) return;
+    e.preventDefault(); links.classList.remove('open'); menu.setAttribute('aria-expanded','false');
+    var y=el.id==='top'?0:el.getBoundingClientRect().top+window.pageYOffset-64;
+    window.scrollTo({top:y,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  });
+  var reveal=document.getElementById('revealBtn'), mail=document.getElementById('mail');
+  reveal.addEventListener('click',function(){
+    var addr=['abdulquayummahi','gmail.com'].join(String.fromCharCode(64));
+    mail.textContent=addr; mail.href='mai'+'lto:'+addr; mail.hidden=false;
+    document.getElementById('mailHidden').hidden=true; reveal.hidden=true; document.getElementById('copyBtn').hidden=false;
+  });
+  var btn=document.getElementById('copyBtn');
+  btn.addEventListener('click',function(){
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email';},1800);};
+    var addr=document.getElementById('mail').textContent;
+    try{navigator.clipboard.writeText(addr).then(done,function(){btn.textContent='Select and copy the address';});}catch(e){btn.textContent='Select and copy the address';}
+  });
+  var navs=[].slice.call(document.querySelectorAll('.links a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){navs.forEach(function(a){a.classList.toggle('on',a.getAttribute('data-go')===en.target.id);});}});},{rootMargin:'-45% 0px -50% 0px'});
+    ['about','skills','projects','education','contact'].forEach(function(id){io.observe(document.getElementById(id));});
+  }
+})();
+</script>
+</body>
+</html>
