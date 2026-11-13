@@ -59,8 +59,8 @@ header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--b
 .role{font-size:clamp(1.15rem,2.2vw,1.45rem);color:var(--head);font-weight:500;margin:16px 0 18px}
 .hero p.lead{color:var(--muted);font-size:1.08rem;max-width:56ch}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.photo{justify-self:end;position:relative}
-.photo img{width:min(240px,60vw);height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:20px;display:block;padding:10px;background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 22%,var(--card)),color-mix(in srgb,var(--accent2) 18%,var(--card)));border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));box-shadow:var(--shadow)}
+.photo{justify-self:end;position:relative;padding:4px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--shadow)}
+.photo img{width:min(220px,56vw);height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center 12%;border-radius:50%;display:block;border:5px solid var(--bg);background:#fff}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px;position:relative}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
 .stat strong{display:block;font-size:1.9rem;font-weight:800;color:var(--head);letter-spacing:-.03em;line-height:1.1}
@@ -128,7 +128,8 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   .hero{padding:56px 0 48px}
   .hero-grid,.about-grid,.two,.proj{grid-template-columns:1fr;gap:28px}
   .photo{order:-1;justify-self:start}
-  .photo img{width:130px;height:auto;border-radius:16px;padding:6px}
+  .photo{padding:3px}
+  .photo img{width:112px;height:auto;border-width:3px}
   .grid3{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:1fr;margin-top:40px}
   .earlier{grid-template-columns:1fr}
